@@ -1,71 +1,78 @@
 // Text Adventure Game
-const start = `Welcome to the Ghostbusters Text Adventure Game. Click 'OK' to start the game.`;
+const start = `Dinner with Bob Ross. Click 'OK' to start the game.`;
 
 const enter = "Please enter 1 or 2 for your answer";
 
-const gameOver = "Sorry GAME OVER!";
+const gameOver = "";
 
-const q1 = `You are trying to catch a ghost called "Slimer" at the Sedgwick Hotel but have not seen him yet. Should you...
-1. Take the elevator to look on the 12th floor
+const q1 = `You see Bob sitting at the dinner table in [insert fancy restaurant name]. How do you greet him?
+1. Hey..so..uh idk
 OR
-2. Wait in the lobby to see if he shows up there
+2. Hello, how are you tonight?
 ${enter}`;
 
-const gameOver1 = `You never see Slimer so you give up on catching ghosts and become a talk show host instead. ${gameOver}`;
+const gameOver1 = `Oh Bob felt like you weren't excited for the dinner and looks sad. '^' ${gameOver}`;
 
-const q2 = `When you get off the elevator something startles you! Should you...
-1. Look to see what it is
+const q2 = `(Bob smiles) Thank you for asking, I'm just fine, what about yourself?
+1. I'm good so what do you do besides painting on TV?
 OR
-2. Shoot at it immediately with your proton pack
+2. Huh? oh I guess I'm ok..um..(you sit there awkwardly in the silence)
 ${enter}`;
 
-const gameOver2 = `It was the hotel maid and you nearly killed her! You are forced to leave the hotel. ${gameOver}`;
+const gameOver2 = `(Bob fidgets with his silverware and halfway smiles but his smile drops a bit) Alrighty then.. ${gameOver}`;
 
-const q3 = `It was just the hotel maid. So you walk around to look for Slimer and You Spot Him! Should you...
-1. Call to let the other Ghostbusters know you found him
+const q3 = `(Bob begins to tell you stories about what he does and use to do) So when I was a boy I use to go out to the woods and play with the woodland critters since there wasn't anyone to really play with..
+1. (You pick up your phone in the middle of the story and start looking through apps) uh huh..oh..neat
 OR
-2. Hide and wait to see where he goes
+2. Oh wow, that's so sweet that you have a love for woodland creatures..so is that why you usually have a squirrel in your pocket?
 ${enter}`;
 
-const gameOver3 = `Slimer hears you, immediately flies at you, and YOU GET SLIMED! ${gameOver}`;
+const gameOver3 = `(Bob glances at you and frowns a bit) Are you bored with my stories? I'm sorry if you want I can hush. '^'  ${gameOver}`;
 
-const q4 = `You see that Slimer goes into the ballroom so you quickly tell the other Ghostbusters and you all head in. You see him flying around when you walk in. Should you...
-1. Shoot at him with your proton pack
+const q4 = `(Bob looks so happy) Yes! Their name is Peapod, such a sweet little buddy, So what do you enjoy doing?
+1. Oh oks well..I enjoy [insert what you enjoy/hobbies]
 OR
-2. Put two proton packs together to try and create a more powerful shot (A.K.A. Cross The Streams)
+2. Cool..I guess I just kinda of sit around and don't do much of anything else
 ${enter}`;
 
-const gameOver4 = `All life as you know it stops instantaneously and every molecule in your body explodes at the speed of light. ${gameOver}`;
+const gameOver4 = `(Bob looks a bit worried) I'm sorry to hear that.. ${gameOver}`;
 
-const q5 = `You wrangled Slimer with your shot and the ghost trap is set underneath him. You noticed there is a bright light coming from the trap and are tempted to look at it. Should you...
-1. Look at the trap
+const q5 = `(Bob seems so interested in your hobbies and such) That is wonderful to hear..this was a lovely dinner with you!
+1. Ehh..I didn't care much for it but you're a good guy..
 OR
-2. Keep your focus on Slimer
+2. I'm so glad to hear that..this was a great dinner with you!
 ${enter}`;
 
-const gameOver5 = `You looked at the trap and the light BLINDED YOU! ${gameOver}`;
+const gameOver5 = `(Bob looks sorrow and leaves the dinner early) I'm sorry it was terrible..I'll just go..goodbye
+[you made Bob sad, you are terrible at dinner and a mean person, go think about what you did.] ${gameOver}`;
 
-const win = `The ghost trap sucked Slimer in and closed. CONGRATULATIONS! YOU CAUGHT SLIMER!!!`;
+const win = `You did it! Bob enjoyed having dinner with you that he'll plan another one again next time. I think this is the start of a amazing friendship. Thank you for playing..Wish to replay?`;
 
-// Alerts the user to start the game 
 alert(start);
-
-// Sets the value of userInput to the user's entry
 let userInput = prompt(q1);
 
-// NESTED CONDITIONALS STATEMENTS
-// 1ST Conditional Statements
-// NOTE: Prompts returns the value entered in as a String. That is why double equals is used instead of triple equals (AKA Strict Equals)
-if (userInput == 1) {
-  userInput = prompt(q2);   
-
-  // 2ND Conditional Statement
-  if (userInput == 1) {
-    userInput = prompt(q3);
-  } else {
-    alert(gameOver2);
-  }
-
+if (userInput == 2) {
+    userInput = prompt(q2);
 } else {
     alert(gameOver1);
 }
+if (userInput == 1) {
+    userInput = prompt(q3);
+} else {
+    alert(gameOver2);
+}
+if (userInput == 2) {
+    userInput =prompt(q4);
+} else {
+    alert(gameOver3);
+}
+if (userInput == 1) {
+    userInput = prompt(q5);
+} else {
+    alert(gameOver4);
+}
+if (userInput == 2) {
+    alert(win);
+} else {
+    alert(gameOver5);
+} 
